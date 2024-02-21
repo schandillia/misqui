@@ -19,7 +19,7 @@ export default function Home() {
 				</p>
 				<p className="text-softer dark:text-softer-dark">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Fugit, ratione.
+					Fugit, rationes.
 				</p>
 			</div>
 			<Button variant="default">BUTTON</Button>
