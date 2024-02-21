@@ -12,7 +12,7 @@ export default function Home() {
 				Gradient
 			</h1>
 
-			<div className="p-10 bg-slate-50 dark:bg-slate-900">
+			<div className="p-10 bg-lightest dark:bg-lightest-dark">
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit.
 					Impedit, numquam.
@@ -22,7 +22,7 @@ export default function Home() {
 					Fugit, ratione.
 				</p>
 			</div>
-			<Button variant="default">Button</Button>
+			<Button variant="default">BUTTON</Button>
 		</main>
 	)
 }
