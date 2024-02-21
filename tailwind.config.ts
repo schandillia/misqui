@@ -1,6 +1,16 @@
 /* eslint-disable global-require */
 import type { Config } from "tailwindcss"
 
+// Custom color definitions
+const soft = {
+	DEFAULT: "hsl(215.29999999999995, 19.3%, 34.5%)",
+	dark: "hsl(215.39999999999998, 16.3%, 46.9%)",
+}
+const softer = {
+	DEFAULT: "hsl(215.39999999999998, 16.3%, 46.9%)",
+	dark: "hsl(215.39999999999998, 16.3%, 46.9%)",
+}
+
 const config = {
 	darkMode: ["class"],
 	content: [
@@ -53,6 +63,8 @@ const config = {
 					DEFAULT: "hsl(var(--card))",
 					foreground: "hsl(var(--card-foreground))",
 				},
+				soft,
+				softer,
 			},
 			borderRadius: {
 				lg: "var(--radius)",

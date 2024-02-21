@@ -5,11 +5,24 @@ export default function Home() {
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
 			<ThemeToggle />
+			<h1 className="text-7xl font-bold text-soft dark:text-soft-dark">
+				Soft
+			</h1>
+			<h1 className="text-7xl font-bold bg-gradient-to-r from-primary via-red-400 to-pink-500 inline-block text-transparent bg-clip-text">
+				Gradient
+			</h1>
+
+			<div className="p-10 bg-slate-50 dark:bg-slate-900">
+				<p>
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+					Impedit, numquam.
+				</p>
+				<p className="text-softer dark:text-softer-dark">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Fugit, ratione.
+				</p>
+			</div>
 			<Button variant="default">Button</Button>
-			<Button variant="destructive">Button</Button>
-			<Button variant="secondary">Button</Button>
-			<Button variant="outline">Button</Button>
-			<Button variant="ghost">Button</Button>
 		</main>
 	)
 }
