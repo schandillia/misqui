@@ -33,3 +33,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# custom
+next.config.js
+postcss.config.js
+src/components/ui/*
+src/lib/utils*
