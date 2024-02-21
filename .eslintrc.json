@@ -5,6 +5,7 @@
     "jest": true
   },
   "extends": [
+    "eslint-config-next/typescript",
     "airbnb",
     "airbnb-typescript",
     "plugin:import/typescript",
