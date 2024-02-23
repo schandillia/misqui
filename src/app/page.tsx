@@ -27,7 +27,12 @@ export default function Home() {
 							elit. Fugit, rationes.
 						</p>
 					</div>
-					<Button variant="default">BUTTON</Button>
+					<Button
+						variant="default"
+						className="focus:ring-0 focus:ring-offset-0 focus-visible:ring-offset-0 focus-visible:ring-0 focus:outline-none focus-visible:outline-none"
+					>
+						BUTTON
+					</Button>
 				</main>
 			</MaxWidthWrapper>
 		</>
