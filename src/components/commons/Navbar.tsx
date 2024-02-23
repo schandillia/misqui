@@ -11,7 +11,7 @@ const Navbar = async () => {
 				<div className="flex h-14 items-center justify-between">
 					<Link href="/" className="flex z-40 font-semibold gap-2">
 						<NavbarLogo />
-						<span>{process.env.BRAND}</span>
+						<span className="text-lg">{process.env.BRAND}</span>
 					</Link>
 					{/* add mobile hamburger menu here */}
 

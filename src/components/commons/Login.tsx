@@ -29,7 +29,7 @@ export default function Login() {
 						Login
 					</DialogTitle>
 					<DialogDescription className="text-center">
-						Welcome back
+						Welome back
 					</DialogDescription>
 				</DialogHeader>
 				<div className="flex flex-col gap-4 py-4">
@@ -47,9 +47,9 @@ export default function Login() {
 				<DialogFooter>
 					<div className="flex flex-col w-full gap-5">
 						<Button type="submit" className="w-full">
-							Login
+							Send
 						</Button>
-						<Divider text="Or login using" />
+						<Divider text="Or log in using" />
 						<div className="flex flex-row gap-2 w-full">
 							<Button
 								type="submit"

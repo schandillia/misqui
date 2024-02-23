@@ -1,3 +1,4 @@
+import Footer from "@/components/commons/Footer"
 import GradientText from "@/components/commons/GradientText"
 import MaxWidthWrapper from "@/components/commons/MaxWidthWrapper"
 import Navbar from "@/components/commons/Navbar"
@@ -17,7 +18,7 @@ export default function Home() {
 					</GradientText>
 					<GradientText>gradient paragraph</GradientText>
 
-					<div className="p-10 bg-lightest dark:bg-lightest-dark">
+					<div className="p-10 bg-softest dark:bg-softest-dark shadow-lg">
 						<p>
 							Lorem ipsum dolor, sit amet consectetur adipisicing
 							elit. Impedit, numquam.
@@ -30,6 +31,7 @@ export default function Home() {
 					<Button variant="default">Button</Button>
 				</main>
 			</MaxWidthWrapper>
+			<Footer />
 		</>
 	)
 }
