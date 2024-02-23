@@ -13,8 +13,9 @@ import { Label } from "@/components/ui/label"
 import { FcGoogle } from "react-icons/fc"
 import { FaApple } from "react-icons/fa6"
 import { LogIn } from "lucide-react"
+import Divider from "@/components/commons/Divider"
 
-export default function LoginButton() {
+export default function Login() {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
@@ -48,6 +49,7 @@ export default function LoginButton() {
 						<Button type="submit" className="w-full">
 							Login
 						</Button>
+						<Divider text="Or login using" />
 						<div className="flex flex-row gap-2 w-full">
 							<Button
 								type="submit"

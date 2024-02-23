@@ -1,9 +1,8 @@
 import Link from "next/link"
 import MaxWidthWrapper from "@/components/commons/MaxWidthWrapper"
 import ThemeToggle from "@/components/theme/theme-toggle"
-import LoginButton from "@/components/commons/LoginButton"
-import Image from "next/image"
-import logo from "@/app/logo.png"
+import Login from "@/components/commons/Login"
+import NavbarLogo from "@/components/commons/NavbarLogo"
 
 const Navbar = async () => {
 	return (
@@ -11,18 +10,14 @@ const Navbar = async () => {
 			<MaxWidthWrapper>
 				<div className="flex h-14 items-center justify-between">
 					<Link href="/" className="flex z-40 font-semibold gap-2">
-						<Image
-							src={logo}
-							alt="logo"
-							width={20}
-							height={20}
-							placeholder="blur"
-						/>
+						<NavbarLogo />
 						<span>{process.env.BRAND}</span>
 					</Link>
-					{/* add mobile navbar */}
+					{/* add mobile hamburger menu here */}
+
+					{/* desktop menu below */}
 					<div className="hidden items-center space-x-4 sm:flex">
-						<LoginButton />
+						<Login />
 						<ThemeToggle />
 					</div>
 				</div>
