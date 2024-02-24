@@ -4,7 +4,7 @@ interface DividerProps {
 	text?: string
 }
 
-export default function Divider({ text }: DividerProps) {
+export default function Divider({ text = "" }: DividerProps) {
 	return text ? (
 		<div className="relative flex flex-row py-5 items-center">
 			<Separator className="flex-1" />
@@ -14,8 +14,4 @@ export default function Divider({ text }: DividerProps) {
 	) : (
 		<Separator />
 	)
-}
-
-Divider.defaultProps = {
-	text: null,
 }

@@ -40,6 +40,10 @@
 		"react/react-in-jsx-scope": ["off"],
 		"react/jsx-props-no-spreading": ["warn"],
 		"no-shadow": "off",
-		"import/extensions": "off"
+		"import/extensions": "off",
+		"react/require-default-props": [
+			"error",
+			{ "ignoreFunctionalComponents": true } // Ignore rule for functional components
+		]
 	}
 }

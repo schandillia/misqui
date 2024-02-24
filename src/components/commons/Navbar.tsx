@@ -14,7 +14,9 @@ const Navbar = async () => {
 						className="flex z-40 font-semibold gap-2 items-center"
 					>
 						<NavbarLogo />
-						<span className="text-lg">{process.env.BRAND}</span>
+						<span className="text-lg">
+							{process.env.NEXT_PUBLIC_BRAND}
+						</span>
 					</Link>
 					{/* add mobile hamburger menu here */}
 

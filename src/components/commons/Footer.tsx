@@ -23,8 +23,9 @@ export default function Footer() {
 				<div className="flex flex-col sm:flex-row py-5 sm:h-14 items-center justify-between">
 					{/* Copyright */}
 					<div className="flex py-2 sm:py-0">
-						&copy; {d.getFullYear()} {process.env.BRAND_LONG} All
-						rights reserved.
+						&copy; {d.getFullYear()}{" "}
+						{process.env.NEXT_PUBLIC_BRAND_LONG} All rights
+						reserved.
 					</div>
 					{/* Links */}
 					<div className="flex py-2 sm:py-0 gap-2">

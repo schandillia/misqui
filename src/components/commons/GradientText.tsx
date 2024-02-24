@@ -11,7 +11,7 @@ interface GradientTextProps extends React.HTMLAttributes<HTMLElement> {
 
 export default function GradientText({
 	children,
-	className,
+	className = "",
 	type = "p",
 }: GradientTextProps) {
 	const style = `leading-tight ${cn(
@@ -21,10 +21,4 @@ export default function GradientText({
 	if (tags.includes(type))
 		return React.createElement(type, { className: style }, children)
 	return React.createElement("p", { className: style }, children)
-}
-
-// Set defaultProps for className
-GradientText.defaultProps = {
-	className: "",
-	type: "p",
 }
