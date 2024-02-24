@@ -1,10 +1,13 @@
 import NextAuth from "next-auth"
-import Google from "next-auth/providers/google"
-import AppleProvider from "next-auth/providers/apple"
+import authConfig from "@/auth.config"
+import { PrismaAdapter } from "@auth/prisma-adapter"
+import { db } from "@/lib/db"
 
 export const {
 	handlers: { GET, POST },
 	auth,
 } = NextAuth({
-	providers: [Google, AppleProvider],
+	adapter: PrismaAdapter(db),
+	session: { strategy: "jwt" },
+	...authConfig,
 })

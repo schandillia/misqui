@@ -35,6 +35,8 @@ import login from "@/actions/login"
 import { useTransition, useState } from "react"
 import logo from "@/app/brand/logo.svg"
 import Image from "next/image"
+import { signIn } from "next-auth/react"
+import { DEFAULT_LOGIN_REDIRECT } from "@/routes"
 
 export default function Login() {
 	const [isPending, startTransition] = useTransition()
@@ -65,6 +67,10 @@ export default function Login() {
 		setSuccess("")
 	}
 
+	const onClick = (provider: "google" | "apple") => {
+		signIn(provider, { callbackUrl: DEFAULT_LOGIN_REDIRECT })
+	}
+
 	return (
 		<Dialog onOpenChange={handleOpenChange}>
 			<DialogTrigger asChild>
@@ -86,11 +92,21 @@ export default function Login() {
 					</DialogDescription>
 				</DialogHeader>
 				<div className="flex flex-col mt-5 gap-2">
-					<Button type="submit" variant="outline" className="w-full">
+					<Button
+						type="submit"
+						variant="outline"
+						className="w-full"
+						onClick={() => onClick("google")}
+					>
 						<FcGoogle className="size-5 mr-2" />
 						Continue with Google
 					</Button>
-					<Button type="submit" variant="outline" className="w-full">
+					<Button
+						type="submit"
+						variant="outline"
+						className="w-full"
+						onClick={() => onClick("apple")}
+					>
 						<FaApple className="size-5 mr-2" />
 						Continue with Apple
 					</Button>
