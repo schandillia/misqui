@@ -9,11 +9,11 @@ import {
 	DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { FcGoogle } from "react-icons/fc"
 import { FaApple } from "react-icons/fa6"
 import { LogIn } from "lucide-react"
 import Divider from "@/components/commons/Divider"
+import Link from "next/link"
 
 export default function Login() {
 	return (
@@ -26,46 +26,54 @@ export default function Login() {
 			<DialogContent className="sm:max-w-[425px] flex flex-col">
 				<DialogHeader>
 					<DialogTitle className="text-center text-3xl">
-						Login
+						{process.env.BRAND}
 					</DialogTitle>
 					<DialogDescription className="text-center">
-						Welome back
+						Login to continue
 					</DialogDescription>
 				</DialogHeader>
-				<div className="flex flex-col gap-4 py-4">
+				<div className="flex flex-col mt-5 gap-2">
+					<Button type="submit" variant="outline" className="w-full">
+						<FcGoogle className="size-5 mr-2" />
+						Continue with Google
+					</Button>
+					<Button type="submit" variant="outline" className="w-full">
+						<FaApple className="size-5 mr-2" />
+						Continue with Apple
+					</Button>
+				</div>
+				<Divider text="Or" />
+				<form
+					method="post"
+					action="/api/auth/signin/email"
+					className="flex flex-col"
+				>
 					<div className="flex flex-col gap-2">
-						<Label htmlFor="email" className="font-semibold">
-							Email
-						</Label>
 						<Input
 							id="email"
-							defaultValue="john@doe.com"
-							className="flex-grow"
+							placeholder="john@doe.com"
+							className="flex-grow bg-softest dark:bg-softest-dark"
 						/>
-					</div>
-				</div>
-				<DialogFooter>
-					<div className="flex flex-col w-full gap-5">
-						<Button type="submit" className="w-full">
-							Send
+						<Button type="submit" className="w-full mt-2">
+							Continue with email
 						</Button>
-						<Divider text="Or log in using" />
-						<div className="flex flex-row gap-2 w-full">
-							<Button
-								type="submit"
-								variant="outline"
-								className="w-1/2"
-							>
-								<FcGoogle className="size-5" />
-							</Button>
-							<Button
-								type="submit"
-								variant="outline"
-								className="w-1/2"
-							>
-								<FaApple className="size-5" />
-							</Button>
-						</div>
+					</div>
+				</form>
+				<DialogFooter>
+					<div className="w-full mt-5 text-xs">
+						<p className="text-center text-softer dark:text-softer-dark">
+							By continuing, you agree to {process.env.BRAND}’s
+						</p>
+						<p className="text-center text-softer dark:text-softer-dark">
+							<Link href="/terms" className="text-primary">
+								Terms of Service
+							</Link>{" "}
+							and{" "}
+							<Link href="/terms" className="text-primary">
+								Privacy Policy
+							</Link>
+							.
+						</p>
 					</div>
 				</DialogFooter>
 			</DialogContent>
