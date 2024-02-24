@@ -57,8 +57,14 @@ export default function Login() {
 		})
 	}
 
+	const handleOpenChange = () => {
+		form.reset()
+		setError("")
+		setSuccess("")
+	}
+
 	return (
-		<Dialog>
+		<Dialog onOpenChange={handleOpenChange}>
 			<DialogTrigger asChild>
 				<Button size="sm">
 					Login <LogIn className="ml-2" />
