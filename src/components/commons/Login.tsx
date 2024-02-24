@@ -84,7 +84,10 @@ export default function Login() {
 						<Image
 							src={logo}
 							alt={process.env.NEXT_PUBLIC_BRAND!}
-							className="dark:invert size-16"
+							className="size-16"
+							style={{
+								filter: "invert(33%) sepia(88%) saturate(5555%) hue-rotate(255deg) brightness(95%) contrast(95%)",
+							}}
 						/>
 					</DialogTitle>
 					<DialogDescription className="text-center">
