@@ -3,6 +3,7 @@ import GradientText from "@/components/commons/GradientText"
 import MaxWidthWrapper from "@/components/commons/MaxWidthWrapper"
 import Navbar from "@/components/commons/Navbar"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function Home() {
 	return (
@@ -17,6 +18,7 @@ export default function Home() {
 						gradient header
 					</GradientText>
 					<GradientText>gradient paragraph</GradientText>
+					<Link href="/settings">Settings</Link>
 
 					<div className="p-10 bg-softest dark:bg-softest-dark shadow-lg">
 						<p>
