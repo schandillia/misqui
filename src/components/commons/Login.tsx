@@ -29,10 +29,10 @@ import {
 } from "@/components/ui/form"
 import * as z from "zod"
 import LoginSchema from "@/schemas"
+import FormError from "@/components/commons/FormError"
 import FormSuccess from "@/components/commons/FormSuccess"
 import login from "@/actions/login"
 import { useTransition, useState } from "react"
-import FormError from "@/components/commons/FormError"
 
 export default function Login() {
 	const [isPending, startTransition] = useTransition()
@@ -102,9 +102,11 @@ export default function Login() {
 											disabled={isPending}
 											placeholder="john.doe@example.com"
 											type="email"
+											autoComplete="email"
+											className="bg-softest dark:bg-softest-dark"
 										/>
 									</FormControl>
-									<FormMessage />
+									<FormMessage className="text-destructive" />
 								</FormItem>
 							)}
 						/>
