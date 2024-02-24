@@ -2,6 +2,7 @@ import NextAuth from "next-auth"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import { PrismaClient } from "@prisma/client"
 import EmailProvider from "next-auth/providers/email"
+import NodemailerProvider from "next-auth/providers/nodemailer"
 import GoogleProvider from "next-auth/providers/google"
 
 const prisma = new PrismaClient()
@@ -14,6 +15,18 @@ export default NextAuth({
 			clientId: process.env.GOOGLE_CLIENT_ID,
 			clientSecret: process.env.GOOGLE_CLIENT_SECRET,
 		}),
+		NodemailerProvider({
+			server: {
+				host: process.env.SMTP_HOST,
+				port: Number(process.env.SMTP_PORT),
+				auth: {
+					user: process.env.SMTP_USER,
+					pass: process.env.SMTP_PASSWORD,
+				},
+			},
+			from: process.env.EMAIL_FROM,
+		}),
+		// EmailProvider is deprecated, so use NodemailerProvider instead
 		EmailProvider({
 			server: {
 				host: process.env.SMTP_HOST,
