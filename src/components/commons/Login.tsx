@@ -36,12 +36,14 @@ import { useTransition, useState } from "react"
 import logo from "@/app/brand/logo.svg"
 import Image from "next/image"
 import { signIn } from "next-auth/react"
-import { DEFAULT_LOGIN_REDIRECT } from "@/routes"
+import { usePathname } from "next/navigation"
 
 export default function Login() {
 	const [isPending, startTransition] = useTransition()
 	const [error, setError] = useState<string | undefined>("")
 	const [success, setSuccess] = useState<string | undefined>("")
+
+	const pathname = usePathname()
 
 	const form = useForm<z.infer<typeof LoginSchema>>({
 		resolver: zodResolver(LoginSchema),
@@ -68,7 +70,7 @@ export default function Login() {
 	}
 
 	const onClick = (provider: "google" | "apple") => {
-		signIn(provider, { callbackUrl: DEFAULT_LOGIN_REDIRECT })
+		signIn(provider, { callbackUrl: pathname })
 	}
 
 	return (
