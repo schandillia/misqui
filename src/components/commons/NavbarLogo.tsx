@@ -12,5 +12,11 @@ export default function NavbarLogo() {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const logoSrc = resolvedTheme === "dark" ? logoLight : logoDark
 
-	return <Image src={logo} alt="logo" className="dark:invert size-5" />
+	return (
+		<Image
+			src={logo}
+			alt={process.env.NEXT_PUBLIC_BRAND!}
+			className="dark:invert size-5"
+		/>
+	)
 }

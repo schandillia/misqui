@@ -33,6 +33,8 @@ import FormError from "@/components/commons/FormError"
 import FormSuccess from "@/components/commons/FormSuccess"
 import login from "@/actions/login"
 import { useTransition, useState } from "react"
+import logo from "@/app/brand/logo.svg"
+import Image from "next/image"
 
 export default function Login() {
 	const [isPending, startTransition] = useTransition()
@@ -72,8 +74,12 @@ export default function Login() {
 			</DialogTrigger>
 			<DialogContent className="sm:max-w-[425px] flex flex-col">
 				<DialogHeader>
-					<DialogTitle className="text-center text-3xl">
-						{process.env.NEXT_PUBLIC_BRAND}
+					<DialogTitle className="text-center text-3xl mx-auto">
+						<Image
+							src={logo}
+							alt={process.env.NEXT_PUBLIC_BRAND!}
+							className="dark:invert size-16"
+						/>
 					</DialogTitle>
 					<DialogDescription className="text-center">
 						Login to continue
@@ -112,7 +118,7 @@ export default function Login() {
 											className="bg-softest dark:bg-softest-dark"
 										/>
 									</FormControl>
-									<FormMessage className="text-destructive" />
+									<FormMessage />
 								</FormItem>
 							)}
 						/>

@@ -27,6 +27,7 @@ export default NextAuth({
 			from: process.env.EMAIL_FROM,
 		}),
 		// EmailProvider is deprecated, so use NodemailerProvider instead
+		// If you're using signIn("email") in your application, you can update it to signIn("nodemailer")
 		EmailProvider({
 			server: {
 				host: process.env.SMTP_HOST,
