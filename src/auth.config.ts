@@ -1,11 +1,11 @@
 import Google from "next-auth/providers/google"
 import AppleProvider from "next-auth/providers/apple"
-// import Email from "next-auth/providers/email"
+// import EmailProvider from "next-auth/providers/email"
 import type { NextAuthConfig } from "next-auth"
 
 export default {
 	providers: [
-		// Email({
+		// EmailProvider({
 		// 	server: {
 		// 		host: process.env.SMTP_HOST,
 		// 		port: Number(process.env.SMTP_PORT),
