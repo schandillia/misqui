@@ -1,10 +1,15 @@
 import Link from "next/link"
 import MaxWidthWrapper from "@/components/commons/MaxWidthWrapper"
 import ThemeToggle from "@/components/theme/theme-toggle"
-import Login from "@/components/commons/Login"
 import NavbarLogo from "@/components/commons/NavbarLogo"
+import Login from "@/components/commons/Login"
+import { auth } from "@/auth"
+import UserAccountNav from "@/components/commons/UserAccountNav"
 
 const Navbar = async () => {
+	const session = await auth()
+	const user = session?.user
+
 	return (
 		<nav className="sticky h-14 inset-x-0 top-0 z-30 w-full backdrop-blur-lg transition-all">
 			<MaxWidthWrapper>
@@ -22,7 +27,20 @@ const Navbar = async () => {
 
 					{/* desktop menu below */}
 					<div className="hidden items-center space-x-4 sm:flex">
-						<Login />
+						{/* User profile dropdown */}
+						{!user ? (
+							<Login />
+						) : (
+							<UserAccountNav
+								name={
+									!user.name
+										? `${user.email}`
+										: `${user.name}`
+								}
+								email={user.email ?? ""}
+								imageUrl={user.image ?? ""}
+							/>
+						)}
 						<ThemeToggle />
 					</div>
 				</div>
