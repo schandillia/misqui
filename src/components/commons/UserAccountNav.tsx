@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import initials from "@/lib/initials"
 import { User } from "lucide-react"
+import SignoutButton from "@/components/commons/SignOutButton"
 
 interface UserAccountNavProps {
 	email: string | undefined
@@ -30,7 +31,7 @@ function UserAccountNav({ email, imageUrl, name }: UserAccountNavProps) {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild className="overflow-visible">
-				<Button className="rounded-full size-8 aspect-square text-primary dark:text-softer">
+				<Button className="rounded-full size-6 aspect-square text-primary dark:text-softer">
 					<Avatar>
 						<AvatarImage src={imageUrl} alt={name} />
 						<AvatarFallback>{displayName}</AvatarFallback>
@@ -58,7 +59,7 @@ function UserAccountNav({ email, imageUrl, name }: UserAccountNavProps) {
 				</DropdownMenuItem>
 				<DropdownMenuSeparator />
 				<DropdownMenuItem className="cursor-pointer">
-					{/* <SignoutButton /> */}
+					<SignoutButton />
 				</DropdownMenuItem>
 			</DropdownMenuContent>
 		</DropdownMenu>
