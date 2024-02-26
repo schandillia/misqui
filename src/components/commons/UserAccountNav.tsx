@@ -1,3 +1,4 @@
+import React from "react"
 import Link from "next/link"
 import {
 	DropdownMenu,
@@ -14,9 +15,10 @@ import SignoutButton from "@/components/commons/SignOutButton"
 
 interface UserAccountNavProps {
 	email: string | undefined
-	name: string
+	name: string | undefined
 	imageUrl: string
 }
+
 function UserAccountNav({ email, imageUrl, name }: UserAccountNavProps) {
 	let displayName
 
@@ -27,6 +29,11 @@ function UserAccountNav({ email, imageUrl, name }: UserAccountNavProps) {
 	} else {
 		displayName = <User />
 	}
+
+	const menuItems = [
+		{ label: "Dashboard", href: "/dashboard" },
+		{ label: "Settings", href: "/settings" },
+	]
 
 	return (
 		<DropdownMenu>
@@ -50,14 +57,21 @@ function UserAccountNav({ email, imageUrl, name }: UserAccountNavProps) {
 					</div>
 				</div>
 				<DropdownMenuSeparator />
-				<DropdownMenuItem asChild>
-					<Link href="/dashboard">Dashboard</Link>
-				</DropdownMenuItem>
-				<DropdownMenuSeparator />
-				<DropdownMenuItem asChild>
-					<Link href="/dashboard">Something Else</Link>
-				</DropdownMenuItem>
-				<DropdownMenuSeparator />
+				{menuItems.map((menuItem) => {
+					return (
+						<React.Fragment key={menuItem.label}>
+							<DropdownMenuItem
+								asChild
+								className="cursor-pointer"
+							>
+								<Link href={menuItem.href}>
+									{menuItem.label}
+								</Link>
+							</DropdownMenuItem>
+							<DropdownMenuSeparator />
+						</React.Fragment>
+					)
+				})}
 				<DropdownMenuItem className="cursor-pointer">
 					<SignoutButton />
 				</DropdownMenuItem>
@@ -65,4 +79,5 @@ function UserAccountNav({ email, imageUrl, name }: UserAccountNavProps) {
 		</DropdownMenu>
 	)
 }
+
 export default UserAccountNav
