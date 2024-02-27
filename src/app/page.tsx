@@ -9,7 +9,7 @@ export default function Home() {
 		<>
 			<Navbar />
 			<MaxWidthWrapper>
-				<main className="flex min-h-screen flex-col items-center justify-between p-24">
+				<main className="flex flex-col items-center justify-between p-24">
 					<h1 className="text-7xl font-bold text-soft dark:text-soft-dark">
 						{process.env.NEXT_PUBLIC_BRAND}
 					</h1>

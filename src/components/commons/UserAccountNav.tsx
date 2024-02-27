@@ -32,6 +32,7 @@ function UserAccountNav({ email, imageUrl, name }: UserAccountNavProps) {
 
 	const menuItems = [
 		{ label: "Dashboard", href: "/dashboard" },
+		{ label: "Server", href: "/server" },
 		{ label: "Settings", href: "/settings" },
 	]
 
@@ -68,10 +69,11 @@ function UserAccountNav({ email, imageUrl, name }: UserAccountNavProps) {
 									{menuItem.label}
 								</Link>
 							</DropdownMenuItem>
-							<DropdownMenuSeparator />
+							{/* <DropdownMenuSeparator /> */}
 						</React.Fragment>
 					)
 				})}
+				<DropdownMenuSeparator />
 				<DropdownMenuItem className="cursor-pointer">
 					<SignoutButton />
 				</DropdownMenuItem>
