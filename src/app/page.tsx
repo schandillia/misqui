@@ -13,19 +13,33 @@ export default function Home() {
 					<h1 className="text-7xl font-bold text-soft dark:text-soft-dark">
 						{process.env.NEXT_PUBLIC_BRAND}
 					</h1>
-					<GradientText type="h1" className="text-7xl font-bold">
+					<GradientText type="h1" className="text-6xl font-bold">
 						gradient header
 					</GradientText>
 					<GradientText>gradient paragraph</GradientText>
 
 					<div className="p-10 bg-softest dark:bg-softest-dark shadow-lg">
 						<p>
-							Lorem ipsum dolor, sit amet consectetur adipisicing
-							elit. Impedit, numquam.
+							Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Voluptate recusandae officiis nostrum
+							distinctio blanditiis porro minima at totam
+							voluptatem eos debitis quo voluptatum repudiandae
+							praesentium vel, provident labore. Atque,
+							repellendus.
 						</p>
 						<p className="text-softer dark:text-softer-dark">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Fugit, rationes.
+							Lorem, ipsum dolor sit amet consectetur adipisicing
+							elit. Voluptatibus earum esse quo non necessitatibus
+							cupiditate sit odio laborum reprehenderit dolorem
+							perferendis omnis, nisi, similique repellendus
+							neque, ducimus dolor obcaecati corporis odit
+							molestias recusandae. Modi natus nulla recusandae
+							laborum dicta nemo odit impedit aliquid! Recusandae
+							itaque adipisci illum porro consectetur, architecto
+							maiores odit ipsum aliquam perspiciatis molestiae
+							quis? Minima dolorum delectus doloribus facere minus
+							at, tempore velit neque, vitae quis tempora ipsa
+							recusandae hic odit unde eius ipsum non! Animi, sed.
 						</p>
 					</div>
 					<Button variant="default">Button</Button>
