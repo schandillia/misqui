@@ -28,7 +28,7 @@ import {
 	FormMessage,
 } from "@/components/ui/form"
 import * as z from "zod"
-import LoginSchema from "@/schemas"
+import { LoginSchema } from "@/schemas"
 import FormError from "@/components/commons/FormError"
 import FormSuccess from "@/components/commons/FormSuccess"
 import login from "@/actions/login"
@@ -164,12 +164,11 @@ export default function Login() {
 				<DialogFooter>
 					<div className="w-full mt-5 text-xs">
 						<p className="text-center text-softer dark:text-softer-dark">
-							By continuing, you agree to{" "}
-							{process.env.NEXT_PUBLIC_BRAND}’s
+							By continuing, you agree to the
 						</p>
 						<p className="text-center text-softer dark:text-softer-dark">
 							<Link href="/terms" className="text-primary">
-								Terms of Service
+								{process.env.NEXT_PUBLIC_BRAND} Terms of Service
 							</Link>{" "}
 							and{" "}
 							<Link href="/terms" className="text-primary">

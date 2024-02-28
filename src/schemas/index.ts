@@ -1,9 +1,13 @@
 import * as z from "zod"
 
-const LoginSchema = z.object({
+export const LoginSchema = z.object({
 	email: z.string().email({
 		message: "Please enter a valid email.",
 	}),
 })
 
-export default LoginSchema
+export const ProfileSchema = z.object({
+	email: z.string().email({
+		message: "Please enter a valid email.",
+	}),
+})

@@ -8,8 +8,12 @@ export default function SignoutButton() {
 	}
 
 	return (
-		<button type="submit" onClick={handleSignout}>
-			Sign out
+		<button
+			type="submit"
+			onClick={handleSignout}
+			className="w-full text-left"
+		>
+			Sign Out
 		</button>
 	)
 }
