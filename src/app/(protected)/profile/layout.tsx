@@ -5,8 +5,10 @@ import type { Metadata } from "next"
 import { SessionProvider } from "next-auth/react"
 import { auth } from "@/auth"
 
+const brand = process.env.NEXT_PUBLIC_BRAND
+
 export const metadata: Metadata = {
-	title: "Misqui Profile",
+	title: `${brand} Profile`,
 	description: "Custom profile page",
 }
 

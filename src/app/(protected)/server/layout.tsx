@@ -3,8 +3,10 @@ import MaxWidthWrapper from "@/components/commons/MaxWidthWrapper"
 import Navbar from "@/components/commons/Navbar"
 import type { Metadata } from "next"
 
+const brand = process.env.NEXT_PUBLIC_BRAND
+
 export const metadata: Metadata = {
-	title: "Misqui Server",
+	title: `${brand} Server`,
 	description: "Custom server component page",
 }
 

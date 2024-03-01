@@ -2,11 +2,10 @@
 
 "use client"
 
-import { useSession } from "next-auth/react"
+import useCurrentUser from "@/hooks/use-current-user"
 
 function Page() {
-	const session = useSession()
-	const user = session.data?.user
+	const user = useCurrentUser()
 
 	return (
 		<main className="flex flex-col items-center justify-between p-24">

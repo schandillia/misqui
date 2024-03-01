@@ -16,7 +16,7 @@ export default function NavbarLogo() {
 		<Image
 			src={logo}
 			alt={process.env.NEXT_PUBLIC_BRAND!}
-			className="size-5"
+			className="size-8"
 			style={{
 				filter: "invert(33%) sepia(88%) saturate(5555%) hue-rotate(255deg) brightness(95%) contrast(95%)",
 			}}

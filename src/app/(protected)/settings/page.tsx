@@ -1,10 +1,9 @@
-// Example of session retrieval in server component
+"use client"
 
-import { auth } from "@/auth"
+import useCurrentUser from "@/hooks/use-current-user"
 
-const Page = async () => {
-	const session = await auth()
-	const user = session?.user
+function Page() {
+	const user = useCurrentUser()
 
 	return (
 		<main className="flex flex-col items-center justify-between p-24">
